@@ -97,36 +97,51 @@ The element will be visually hidden but will still be read by screen reader tech
 }
 
 .flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Divs & Containers */
 
 body {
-    height: 100vh;
-    display: flex;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 800;
-    background-image: var(--color-mainBg);
+  height: 100vh;
+  display: flex;
+  background-image: var(--color-mainBg);
 }
 
 main {
-    font-family: 'Kumbh Sans', sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 400;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
+  margin: 110px 0 20px 0;
 }
 
 .accordion-wrapper {
-    background-color: white;
-    padding: 20px;
-    border-radius: 20px;
-    width: 95%;
+  position: relative;
+  background-color: white;
+  padding: 15px;
+  border-radius: 20px;
+  width: 340px;
+  margin-top: 150px;
 }
+    
 
 img {
-    /* box-shadow: 10px 10px; */
+  position: absolute;
+  width: 80%;
+  top: -125px;
+  left: 33px;
+  /* box-shadow: 10px 10px; */
+}
+
+details {
+  padding: 5px 0 5px 0;
+}
+
+.accordion-answer {
+  padding-top: 15px;
 }
