@@ -113,6 +113,13 @@ main {
   font-family: 'Kumbh Sans', sans-serif;
   font-weight: 400;
   padding: 30px 0 0px 0;
+  margin: 120px 0 30px 0;
+}
+
+.image-illustration--desktop,
+.image-shadow--desktop,
+.image-box--desktop {
+  display: none;
 }
 
 h1 {
@@ -127,11 +134,8 @@ h1 {
   padding: 15px;
   border-radius: 20px;
   width: 340px;
-  margin-top: 120px;
-  margin-bottom: 30px;
 }
     
-
 .image-illustration--mobile,
 .image-shadow--mobile {
   position: absolute;
@@ -192,3 +196,59 @@ details {
 }
 
 
+@media screen and (min-width: 800px) {
+
+  main {
+    padding: 0;
+    margin: 0;
+  }
+
+  h1 {
+    text-align: left;
+    margin: 0 0 20px 0;
+  }
+
+  .image-illustration--mobile,
+  .image-shadow--mobile {
+    display: none;
+  }
+
+  .image-illustration--desktop,
+  .image-shadow--desktop,
+  .image-box--desktop {
+    display: block;
+  }
+
+  .image-illustration--desktop,
+  .image-shadow--desktop {
+    position: absolute;
+    width: 50%;
+    top: 45px;
+    left: -70px;
+    overflow: hidden;
+  }
+
+  .image-shadow--desktop {
+    width: 65%;
+    top: -55px; /* required to unset whats set above */ 
+    left: -190px;
+  }
+
+  .image-box--desktop {
+    position: absolute;
+    width: 18%;
+    top: 160px;
+    left: -70px;
+    z-index: 1; /* To make sure this child appears on top */
+  }
+
+  .accordion-wrapper {
+    padding: 15px;
+    border-radius: 20px;
+    min-width: 750px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-right: 50px;
+    padding-left: 50%;
+  }
+}
