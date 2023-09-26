@@ -100,6 +100,7 @@ The element will be visually hidden but will still be read by screen reader tech
   display: flex;
   align-items: center;
   justify-content: center;
+  transform-origin: top;
 }
 
 /* Divs & Containers */
@@ -150,6 +151,7 @@ h1 {
 
 details {
   padding: 5px 0 5px 0;
+  transform-origin: top;
 }
 
 .accordion-div {
@@ -158,6 +160,7 @@ details {
 }
 .accordion-answer {
   padding-top: 15px;
+  display: block;
 }
 
 .accordion-div[open] .accordion-question {
@@ -191,7 +194,7 @@ details {
 
 .accordion-div[open] .custom-icon {
   /* styles for the FAQ that has an open <details> element */
-  rotate: 180deg;
+  /* rotate: 180deg; */ /* MOVED ROTATION FUNCTIONALITY TO JAVASCRIPT */
   top: 12px; /* ensures pixel perfect center alignment with text when rotated */
 }
 
@@ -228,10 +231,14 @@ details {
     overflow: hidden;
   }
 
+  .image-illustration--desktop {
+    z-index: 2;
+  }
   .image-shadow--desktop {
     width: 65%;
     top: -55px; /* required to unset whats set above */ 
     left: -190px;
+    z-index: 1;
   }
 
   .image-box--desktop {
@@ -239,7 +246,7 @@ details {
     width: 18%;
     top: 160px;
     left: -70px;
-    z-index: 1; /* To make sure this child appears on top */
+    z-index: 5; /* To make sure this child appears on top */
   }
 
   .accordion-wrapper {
