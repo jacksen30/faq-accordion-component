@@ -61,7 +61,7 @@ select {
   font: inherit;
 }
 
-/* sr-only is for screen reader use only - 
+/* sr-only is for screen reader use only -
 The element will be visually hidden but will still be read by screen reader technology. */
 .sr-only {
     position: absolute;
@@ -77,9 +77,9 @@ The element will be visually hidden but will still be read by screen reader tech
     z-index: -1;
     text-indent: -9999px;
 }
-  
-/*  A big shout out to Andy Bell at https://andy-bell.co.uk/about/ 
-    For his great article " A Modern CSS Reset " I recommend giving it a read at https://andy-bell.co.uk/a-modern-css-reset/ 
+
+/*  A big shout out to Andy Bell at https://andy-bell.co.uk/about/
+    For his great article " A Modern CSS Reset " I recommend giving it a read at https://andy-bell.co.uk/a-modern-css-reset/
 */
 
 
@@ -136,7 +136,7 @@ h1 {
   border-radius: 20px;
   width: 340px;
 }
-    
+
 .image-illustration--mobile,
 .image-shadow--mobile {
   position: absolute;
@@ -146,7 +146,7 @@ h1 {
 }
 
 .image-shadow--mobile {
-  top: 0px; /* required to unset whats set above */ 
+  top: 0px; /* required to unset whats set above */
 }
 
 details {
@@ -174,13 +174,11 @@ details {
   color: var(--color4);
 }
 
-/* should consider only using this for desktop size viewports */
 .accordion-question:hover {
   color: orange;
   cursor:pointer;
 }
 
-/* Could instead just target summary ??, Check all browser compatability safari ect - not just local but live site */
 .accordion-div > summary {
   list-style: none;
 }
@@ -194,7 +192,6 @@ details {
 
 .accordion-div[open] .custom-icon {
   /* styles for the FAQ that has an open <details> element */
-  /* rotate: 180deg; */ /* MOVED ROTATION FUNCTIONALITY TO JAVASCRIPT */
   top: 12px; /* ensures pixel perfect center alignment with text when rotated */
 }
 
@@ -234,9 +231,10 @@ details {
   .image-illustration--desktop {
     z-index: 2;
   }
+
   .image-shadow--desktop {
     width: 65%;
-    top: -55px; /* required to unset whats set above */ 
+    top: -55px; /* required to unset whats set above */
     left: -190px;
     z-index: 1;
   }
