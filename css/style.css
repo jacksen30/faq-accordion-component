@@ -88,19 +88,13 @@ The element will be visually hidden but will still be read by screen reader tech
 /* Reusable Custom CSS Variables */
 :root {
   --color-mainBg: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%)); /* Background gradient - top to bottom */
-
-  --color1: hsl(238, 29%, 16%);     /* Very dark desaturated blue - Text */
-  --color2: hsl(14, 88%, 65%);    /* Soft red - Text */
-  --color3: hsl(237, 12%, 33%);     /* Very dark grayish blue - Text */
-  --color4: hsl(240, 6%, 50%);     /* Dark grayish blue - Text */
-  --color5: hsl(240, 5%, 91%);     /* Light grayish blue - Dividers */
 }
 
 .flex {
   display: flex;
   align-items: center;
   justify-content: center;
-  transform-origin: top;
+  /* transform-origin: top; - should be applied else where to work */
 }
 
 /* Divs & Containers */
@@ -125,13 +119,13 @@ main {
 
 h1 {
   text-align: center;
-  color: var(--color1);
+  color: hsl(238, 29%, 16%);
   margin: 110px 0 20px 0;
 }
 
 .accordion-wrapper {
   position: relative;
-  background-color: white;
+  background-color: #fff;
   padding: 15px;
   border-radius: 20px;
   width: 340px;
@@ -156,7 +150,7 @@ details {
 
 .accordion-div {
   position: relative;
-  color: var(--color3)
+  color: hsl(237, 12%, 33%);
 }
 .accordion-answer {
   padding-top: 15px;
@@ -165,17 +159,17 @@ details {
 
 .accordion-div[open] .accordion-question {
   /* styles for the FAQ that has an open <details> element */
-  color: var(--color1);
+  color: hsl(238, 29%, 16%);
   font-weight: 700;
 }
 
 .accordion-div[open] > p {
   /* styles for the <summary> when its parent <details> is open */
-  color: var(--color4);
+  color: hsl(240, 6%, 50%);
 }
 
 .accordion-question:hover {
-  color: orange;
+  color: hsl(14, 88%, 65%);
   cursor:pointer;
 }
 
@@ -201,7 +195,6 @@ details:not([open]) .custom-icon {
   transform: rotate(0deg);
   transition: transform 0.3s ease;
 }
-
 
 @media screen and (min-width: 800px) {
 
@@ -255,12 +248,8 @@ details:not([open]) .custom-icon {
   }
 
   .accordion-wrapper {
-    padding: 15px;
     border-radius: 20px;
     min-width: 750px;
-    padding-top: 35px;
-    padding-bottom: 35px;
-    padding-right: 50px;
-    padding-left: 50%;
+    padding: 35px 50px 35px 50%;
   }
 }
