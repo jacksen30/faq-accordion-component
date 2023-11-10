@@ -9,17 +9,14 @@ function toggleAccordion(details) {
   document.querySelectorAll('details').forEach(otherDetails => {
     if (otherDetails !== details) {
       otherDetails.removeAttribute('open');
-      otherDetails.querySelector('.custom-icon').style.transform = 'rotate(0deg)';
     }
   });
 
   // Determine if the current details element should open or close
   if (isOpening) {
     details.setAttribute('open', '');
-    icon.style.transform = 'rotate(180deg)';
   } else {
     details.removeAttribute('open');
-    icon.style.transform = 'rotate(0deg)';
   }
 }
 
@@ -29,7 +26,7 @@ document.querySelector('.accordion-wrapper').addEventListener('click', event => 
   const summary = event.target.closest('summary');
   if (summary) {
     // Prevent default to stop the browser from toggling 'open' automatically
-    event.preventDefault(); // Prevent the default summary click action
+    event.preventDefault();
     const details = summary.parentNode; // Reference the parent details of the clicked summary
     toggleAccordion(details); // Call the toggle function to open or close the accordion
   }

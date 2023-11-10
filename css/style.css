@@ -193,6 +193,13 @@ details {
 .accordion-div[open] .custom-icon {
   /* styles for the FAQ that has an open <details> element */
   top: 12px; /* ensures pixel perfect center alignment with text when rotated */
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+details:not([open]) .custom-icon {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
 }
 
 
