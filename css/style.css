@@ -94,7 +94,6 @@ The element will be visually hidden but will still be read by screen reader tech
   display: flex;
   align-items: center;
   justify-content: center;
-  /* transform-origin: top; - should be applied else where to work */
 }
 
 /* Divs & Containers */
@@ -145,27 +144,39 @@ h1 {
 
 details {
   padding: 5px 0 5px 0;
-  transform-origin: top;
 }
 
 .accordion-div {
   position: relative;
   color: hsl(237, 12%, 33%);
 }
-.accordion-answer {
-  padding-top: 15px;
-  display: block;
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(10%);
+    opacity: 1;
+  }
 }
 
-.accordion-div[open] .accordion-question {
+.accordion-answer {
+  padding-bottom: 5px;
+  display: block;
+  color: hsl(240, 6%, 50%);
+  transform: translateY(0%);
+}
+
+.accordion-div.accordion-open .accordion-answer {
+  animation: slideDown 1.5s ease forwards;
+}
+
+.accordion-div.accordion-open .accordion-question {
   /* styles for the FAQ that has an open <details> element */
   color: hsl(238, 29%, 16%);
   font-weight: 700;
-}
-
-.accordion-div[open] > p {
-  /* styles for the <summary> when its parent <details> is open */
-  color: hsl(240, 6%, 50%);
 }
 
 .accordion-question:hover {
@@ -184,17 +195,18 @@ details {
   top: 15px;
 }
 
-.accordion-div[open] .custom-icon {
+.accordion-div .custom-icon {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.accordion-div.accordion-open .custom-icon {
   /* styles for the FAQ that has an open <details> element */
   top: 12px; /* ensures pixel perfect center alignment with text when rotated */
   transform: rotate(180deg);
   transition: transform 0.3s ease;
 }
 
-details:not([open]) .custom-icon {
-  transform: rotate(0deg);
-  transition: transform 0.3s ease;
-}
 
 @media screen and (min-width: 800px) {
 

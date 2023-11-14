@@ -1,22 +1,22 @@
-// Function that controls the opening and closing of an accordion section
 function toggleAccordion(details) {
-  // Check if the details element is currently closed
+  // Check if the clicked accordion is currently opening
   const isOpening = !details.hasAttribute('open');
-  // Find the icon element within the details element
-  const icon = details.querySelector('.custom-icon');
 
-  // Iterate over all details elements to close any that are open
-  document.querySelectorAll('details').forEach(otherDetails => {
+  // Close all other accordions
+  document.querySelectorAll('.accordion-div').forEach(otherDetails => {
     if (otherDetails !== details) {
       otherDetails.removeAttribute('open');
+      otherDetails.classList.remove('accordion-open');
     }
   });
 
-  // Determine if the current details element should open or close
+  // Toggle the open state of the clicked accordion
   if (isOpening) {
     details.setAttribute('open', '');
+    details.classList.add('accordion-open');
   } else {
     details.removeAttribute('open');
+    details.classList.remove('accordion-open');
   }
 }
 
